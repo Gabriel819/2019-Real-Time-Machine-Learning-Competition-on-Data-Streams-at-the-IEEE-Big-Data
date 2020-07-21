@@ -1,0 +1,35 @@
+syntax = "proto3";
+option java_package = "ex.grpc";
+option objc_class_prefix = "HSW";
+package file;
+
+// The data service definition.
+service DataStreamer {
+  // Sends multiple greetings
+  rpc sendData (stream Prediction) returns (stream Message) {}
+}
+
+message Message{
+    int32  rowID =1;
+    string date = 2;
+    float  target = 3;
+    string Deadline = 4;
+    string Released = 5;
+    string tag= 6;
+}
+
+message Prediction{
+    int32 rowID = 1;
+    float target = 2;
+}
+
+
+
+
+
+
+
+
+
+
+ 
